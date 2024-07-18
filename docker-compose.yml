@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+
+  node:
+    volumes:
+      - .:/src:rw,delegated
+    hostname: node
+    image: ulysse699/react
+    ports:
+      - '5173:5173'
