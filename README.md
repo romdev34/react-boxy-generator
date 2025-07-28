@@ -7,10 +7,17 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-sudo scp -r dist/ ubuntu@51.68.231.1:/var/www/html/react/boxy-generator
+## Lancer le projet en local
+npm run dev
+
+## Lancer le projet sur le serveur
+### Génération du fichier dist
+> npm run build
+> sudo scp -r dist/ ubuntu@51.68.231.1:/var/www/html/react/boxy-generator
+
 lors du déploiement attention a changer la base dans vite.config.js comme ceci
 
-import { defineConfig } from 'vite'
+>import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 
 // https://vitejs.dev/config/
