@@ -20,7 +20,6 @@ export default function Visualization() {
                     backgroundColor: `${boxProperties[3].value}`,
                 }}
             >
-
             </div>
         </div>
     )

@@ -35,7 +35,8 @@ export default function ShadowRange({inputData, shadowID}) {
                        max={inputData.minMax[1]}
                 />
                 <div
-                    className="absolute -z-10 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-0.5 h-10 bg-gray-300 rounded"></div>
+                    className="absolute -z-10 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-0.5 h-10 bg-gray-300 rounded">
+                </div>
             </div>
         </div>
     )

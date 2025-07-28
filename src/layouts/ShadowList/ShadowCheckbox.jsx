@@ -4,7 +4,7 @@ import {updateCheckbox} from "../../features/shadows.js";
 export default function ShadowCheckbox({name, shadowID}) {
     const dispatch = useDispatch()
 
-    const  checkboxShadow = useSelector(state => state.shadows.find(
+    const checkboxShadow = useSelector(state => state.shadows.find(
         shadow => shadow.id === shadowID
     ))
     return (

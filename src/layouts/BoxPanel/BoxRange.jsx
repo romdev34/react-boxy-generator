@@ -11,6 +11,7 @@ export default function BoxRange({inputData}) {
             value: e.target.value
         }))
     }
+
     return (
         <div className="my-6">
             <div className="flex justify-between">
@@ -32,7 +33,9 @@ export default function BoxRange({inputData}) {
                        min={inputData.minMax[0]}
                        max={inputData.minMax[1]}
                 />
-                <div className="absolute -z-10 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-0.5 h-10 bg-gray-300 rounded"></div>
+                <div
+                    className="absolute -z-10 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-0.5 h-10 bg-gray-300 rounded">
+                </div>
             </div>
         </div>
     )

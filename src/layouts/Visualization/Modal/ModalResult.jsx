@@ -2,7 +2,6 @@ import getBoxShadowValue from "../../../utils/getBoxShadowValue.js";
 import {useSelector} from "react-redux";
 import {useEffect} from "react";
 
-
 export default function ModalResult({closeModal}) {
     const shadowValues = useSelector(state => state.shadows)
 
@@ -15,7 +14,7 @@ export default function ModalResult({closeModal}) {
     let runnungAnimation = false
 
     function handleCopy(e) {
-        if(!runnungAnimation) {
+        if (!runnungAnimation) {
             runnungAnimation = true
             e.target.textContent = "copied !"
 
@@ -27,11 +26,9 @@ export default function ModalResult({closeModal}) {
         navigator.clipboard.writeText(`box-shadow: ${getBoxShadowValue(shadowValues)}`)
     }
 
-
-
     return (
         <div
-        onClick={closeModal}
+            onClick={closeModal}
             className="fixed z-10 inset-0 flex items-center justify-center bg-gray-600/75"
         >
             <div
