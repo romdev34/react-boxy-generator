@@ -10,26 +10,12 @@ Currently, two official plugins are available:
 ## Lancer le projet en local
 npm run dev
 
-## Lancer le projet sur le serveur
+## Déployer le projet sur le serveur
 ### Génération du fichier dist
-> npm run build
-> sudo scp -r dist/ ubuntu@51.68.231.1:/var/www/html/react/boxy-generator
+> NODE_ENV=production npm run build
+> sudo scp -r dist-server/* ubuntu@51.68.231.1:/var/www/html/react/boxy-generator
 
-lors du déploiement attention a changer la base dans vite.config.js comme ceci
+## Déployer le projet sur GITHUB
+https://create-react-app.dev/docs/deployment/#github-pages
 
->import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
-
-// https://vitejs.dev/config/
-export default defineConfig({
-base: './',
-plugins: [react()],
-server: {
-watch: {
-usePolling: true,
-},
-host: true, // needed for the Docker Container port mapping to work
-strictPort: true,
-port: 5173, // you can replace this port with any port
-}
-})
+npm run deploy:github

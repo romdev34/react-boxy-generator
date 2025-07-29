@@ -1,18 +1,24 @@
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 
-const isProd = process.env.NODE_ENV === 'production';
+export default defineConfig(({ command, mode }) => {
+  const env = loadEnv(mode, process.cwd(), '')
+  // Définir le dossier de sortie selon le mode
+  const outputDir = mode === 'github' ? 'dist' : 'dist-server'
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  base: '/react/boxy-generator/dist',
-  plugins: [react()],
-  server: {
-    watch: {
-      usePolling: true,
+  return {
+    base: env.VITE_BASE_PATH || '/',
+    plugins: [react()],
+    build: {
+      outDir: outputDir
     },
-    host: true, // needed for the Docker Container port mapping to work
-    strictPort: true,
-    port: 5173, // you can replace this port with any port
+    server: {
+      watch: {
+        usePolling: true,
+      },
+      host: true,
+      strictPort: true,
+      port: 5173,
+    }
   }
 })
